@@ -24,6 +24,10 @@ jobs:
       - name: Setup Gradle
         uses: gradle/actions/setup-gradle@v4
 
+      - name: Make Gradle wrapper executable
+        working-directory: ApiTesting
+        run: chmod +x gradlew
+
       - name: Run RestAssured Tests
         working-directory: ApiTesting
         run: ./gradlew test
