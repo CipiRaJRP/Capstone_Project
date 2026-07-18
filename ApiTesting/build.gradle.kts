@@ -70,24 +70,22 @@ tasks.withType<JavaCompile>().configureEach {
     options.release.set(22)
 }
 
-
 tasks.withType<Test>().configureEach {
-    useJUnitPlatform()
-//    systemProperty("baseUrl", providers.gradleProperty("baseUrl").get())
-//    systemProperty("headless", providers.gradleProperty("headless").get())
-//    systemProperty("browser", providers.gradleProperty("browser").get())
-//    systemProperty("build.label", providers.gradleProperty("buildLabel").orElse("gradle-local").get())
-//    systemProperty("cucumber.publish.quiet", "true")
-//    testLogging {
-//        events("passed", "skipped", "failed")
-//        showStandardStreams = true
-//        exceptionFormat =
-//            org.gradle.api.tasks.testing.logging.TestExceptionFormat.SHORT
-//    }
+useJUnitPlatform()
+testLogging {
+                events("passed", "skipped", "failed")
+                exceptionFormat = org.gradle.api.tasks.testing.logging.TestExceptionFormat.SHORT
+            }
 }
-tasks.test{
+
+        fun Test.useProjectTestClasses() {
+            testClassesDirs = sourceSets.test.get().output.classesDirs
+            classpath = sourceSets.test.get().runtimeClasspath
+        }
+
+        tasks.test{
             description = "Run the tests"
             include("**/BaseApiTest.class")
-
+            include("**/BookingTestIT.class")
             maxParallelForks = 1
-}
+        }
