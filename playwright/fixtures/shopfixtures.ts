@@ -1,14 +1,14 @@
 import {test as base} from '../fixtures/artifact-fixture'
-import { shopflow } from '../flows/shopflow';
+import { tripflow } from '../flows/tripflow';
 
 type PageFixtures = {
-  shop:shopflow;
+  trip:tripflow;
 };
 
 export const test = base.extend<PageFixtures>({
 
-    shop:async({page},use)=>{
-        await use(new shopflow(page));
+    trip:async({page},use)=>{
+        await use(new tripflow(page));
     }
 
 })

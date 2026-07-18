@@ -9,12 +9,18 @@ const logFormat = printf((info) => {const { timestamp, level, message, ...meta }
       return `[${level.toUpperCase()} - ${timestamp}] ${message}${
     Object.keys(filteredMeta).length? ` ${JSON.stringify(filteredMeta)}`: ""}`;})
  
+const redactFormat = winston.format((info) => {
+  return redactSensitiveFields(info);
+});
+
 export const logger = winston.createLogger({
   level: "info",
-  format: combine(timestamp(), logFormat),
-  transports: [
-    new winston.transports.Console(),
-  ],
+  format: combine(
+    redactFormat(),
+    timestamp(),
+    logFormat
+  ),
+  transports: [new winston.transports.Console()],
 });
 
 export function  redactSensitiveFields(obj: any): any {
@@ -23,7 +29,10 @@ export function  redactSensitiveFields(obj: any): any {
       if (
         key.toLowerCase().includes("password") ||
         key.toLowerCase().includes("token") ||
-        key.toLowerCase().includes("secret")
+        key.toLowerCase().includes("secret") ||
+        key.toLowerCase().includes("cardname") ||
+        key.toLowerCase().includes("cardnumber") ||
+        key.toLowerCase().includes("cvv")
       ) {
         return "***REDACTED***";
       }

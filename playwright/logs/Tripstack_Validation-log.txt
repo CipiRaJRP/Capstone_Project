@@ -1,0 +1,13 @@
+[INFO - 10:25:41] Test Started {null
+[INFO - 10:25:41] Logging in {null
+[INFO - 10:25:42] Login successful {null
+[INFO - 10:25:42] Selecting route: CCU -> DEL {null
+[INFO - 10:25:43] Route selected {null
+[INFO - 10:25:43] Booking for 12 day(s) {null
+[INFO - 10:25:43] Travel date selected {null
+[INFO - 10:25:43] Searching buses... {null
+[INFO - 10:25:43] Bus search completed {null
+[INFO - 10:25:43] Opening seater bus listing page {null
+[INFO - 10:25:43] Bus listing page opened {null
+[INFO - 10:25:43] Selecting seat on S2 deck {null
+[INFO - 10:26:07] Test interrupted {null

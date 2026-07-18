@@ -1,23 +1,24 @@
-import { Page } from "playwright";
-import { Locators } from "../locators/Locators";
+import {Page} from "@playwright/test"
 
-export  class LoginPage{
+export class LoginPage{
 
     constructor(private readonly page:Page){}
 
-    async enterTheEmail(email:string){
-       await this.page.getByLabel("email").fill(email);
+    async gotoLogin(){
+        await this.page.goto("/login");
     }
 
-    async enterThePassword(password:string){
+    async enterEmail(email:string){
+        await this.page.getByLabel("email").isVisible();
+        await this.page.getByLabel("email").fill(email);
+    }
+
+    async enterPassword(password:string){
+        await this.page.getByLabel("password").isVisible();
         await this.page.getByLabel("password").fill(password);
     }
 
-    async clickSignIn(){
-        await this.page
-          .getByRole("form", { name: "ShopKart sign in" })
-          .getByRole("button", { name: "Sign in" })
-          .click();
+    async signIn(){
+        await this.page.getByRole("button",{name:"Sign in"}).click();
     }
-
 }

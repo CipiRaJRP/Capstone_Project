@@ -1,1 +1,2 @@
-"# Capstone_Project" 
+# SDET
+Repository for SDET training batch
