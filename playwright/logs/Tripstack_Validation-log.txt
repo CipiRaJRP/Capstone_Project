@@ -1,23 +1,23 @@
-[INFO - 11:06:42] Test Started {null
-[INFO - 11:06:42] Logging in {null
-[INFO - 11:06:44] Login successful {null
-[INFO - 11:06:44] Selecting route: CCU -> DEL {null
-[INFO - 11:06:44] Route selected {null
-[INFO - 11:06:44] Booking for 12 day(s) {null
-[INFO - 11:06:44] Travel date selected {null
-[INFO - 11:06:44] Searching buses... {null
-[INFO - 11:06:45] Bus search completed {null
-[INFO - 11:06:45] Opening seater bus listing page {null
-[INFO - 11:06:45] Bus listing page opened {null
-[INFO - 11:06:45] Selecting seat on S2 deck {null
-[INFO - 11:06:45] Seat selected {null
-[INFO - 11:06:45] Navigating to passenger details page {null
-[INFO - 11:06:45] Passenger details page opened {null
-[INFO - 11:06:45] Entering passenger details for HEIDI HEIDI {null
-[INFO - 11:06:46] Passenger details entered successfully {null
-[INFO - 11:06:46] Processing payment with card  {null
-[INFO - 11:06:46] Payment submitted {null
-[INFO - 11:06:46] Validating booking status... {null
-[INFO - 11:06:46] Booking Status: CONFIRMED {null
-[INFO - 11:06:46] Booking confirmed successfully {null
-[INFO - 11:06:46] Test passed {null
+[INFO - 11:17:58] Test Started {null
+[INFO - 11:17:58] Logging in {null
+[INFO - 11:17:59] Login successful {null
+[INFO - 11:17:59] Selecting route: CCU -> DEL {null
+[INFO - 11:17:59] Route selected {null
+[INFO - 11:17:59] Booking for 12 day(s) {null
+[INFO - 11:17:59] Travel date selected {null
+[INFO - 11:17:59] Searching buses... {null
+[INFO - 11:18:00] Bus search completed {null
+[INFO - 11:18:00] Opening seater bus listing page {null
+[INFO - 11:18:00] Bus listing page opened {null
+[INFO - 11:18:00] Selecting seat on S2 deck {null
+[INFO - 11:18:00] Seat selected {null
+[INFO - 11:18:00] Navigating to passenger details page {null
+[INFO - 11:18:00] Passenger details page opened {null
+[INFO - 11:18:00] Entering passenger details for HEIDI HEIDI {null
+[INFO - 11:18:01] Passenger details entered successfully {null
+[INFO - 11:18:01] Processing payment with card  {null
+[INFO - 11:18:01] Payment submitted {null
+[INFO - 11:18:01] Validating booking status... {null
+[INFO - 11:18:01] Booking Status: CONFIRMED {null
+[INFO - 11:18:01] Booking confirmed successfully {null
+[INFO - 11:18:01] Test passed {null
