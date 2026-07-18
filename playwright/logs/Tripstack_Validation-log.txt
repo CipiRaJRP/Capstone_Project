@@ -1,23 +1,22 @@
-[INFO - 11:21:57] Test Started {null
-[INFO - 11:21:57] Logging in {null
-[INFO - 11:22:00] Login successful {null
-[INFO - 11:22:00] Selecting route: CCU -> DEL {null
-[INFO - 11:22:00] Route selected {null
-[INFO - 11:22:00] Booking for 12 day(s) {null
-[INFO - 11:22:00] Travel date selected {null
-[INFO - 11:22:00] Searching buses... {null
-[INFO - 11:22:01] Bus search completed {null
-[INFO - 11:22:01] Opening seater bus listing page {null
-[INFO - 11:22:01] Bus listing page opened {null
-[INFO - 11:22:01] Selecting seat on S2 deck {null
-[INFO - 11:22:01] Seat selected {null
-[INFO - 11:22:01] Navigating to passenger details page {null
-[INFO - 11:22:01] Passenger details page opened {null
-[INFO - 11:22:01] Entering passenger details for HEIDI HEIDI {null
-[INFO - 11:22:02] Passenger details entered successfully {null
-[INFO - 11:22:02] Processing payment with card  {null
-[INFO - 11:22:02] Payment submitted {null
-[INFO - 11:22:02] Validating booking status... {null
-[INFO - 11:22:02] Booking Status: CONFIRMED {null
-[INFO - 11:22:02] Booking confirmed successfully {null
-[INFO - 11:22:02] Test passed {null
+[INFO - 20:20:34] Test Started {null
+[INFO - 20:20:34] Logging in {null
+[INFO - 20:20:36] Login successful {null
+[INFO - 20:20:36] Login Time: 1889.3991 ms {null
+[INFO - 20:20:36] Selecting route: CCU -> DEL {null
+[INFO - 20:20:36] Route selected {null
+[INFO - 20:20:36] Booking for 12 day(s) {null
+[INFO - 20:20:36] Travel date selected {null
+[INFO - 20:20:36] Searching buses... {null
+[INFO - 20:20:36] Bus search completed {null
+[INFO - 20:20:36] Login Time: 229.35789999999997 ms {null
+[INFO - 20:20:36] Opening seater bus listing page {null
+[INFO - 20:20:36] Bus listing page opened {null
+[INFO - 20:20:36] Selecting seat on S1 deck {null
+[INFO - 20:20:36] Seat selected {null
+[INFO - 20:20:36] Login Time: 65.7467999999999 ms {null
+[INFO - 20:20:36] Navigating to passenger details page {null
+[INFO - 20:20:37] Passenger details page opened {null
+[INFO - 20:20:37] Entering passenger details for HEIDI HEIDI {null
+[INFO - 20:20:37] Passenger details entered successfully {null
+[INFO - 20:20:37] Processing payment with card  {null
+[INFO - 20:20:38] Test passed {null

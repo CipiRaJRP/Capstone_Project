@@ -12,7 +12,7 @@ export const userdata ={
         to:"DEL",
         days:12,
         bus_kind:"seater",
-        deck:"S2"
+        deck:"S1"
    },
    cardDetails:{
        cardName:"Rupay",

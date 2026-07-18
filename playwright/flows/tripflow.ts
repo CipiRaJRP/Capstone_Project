@@ -1,6 +1,6 @@
 import { Page } from "playwright/test";
 import { LoginPage } from "../pages/loginPage";
-import { BusListingPage } from "../pages/buslistingpage";
+import { BusListingPage } from "../pages/busListingPage";
 import { SearchPage } from "../pages/searchPage";
 import { SeatPage } from "../pages/seatPage";
 import { PassengerDetailsPage } from "../pages/passengerDetailsPage";
@@ -73,5 +73,13 @@ export class tripflow{
         const status = await this.confirmationpage.bookingStatus();
         return status;
     }
+
+    async validateThePayement500(){
+        
+        const errorMessage = await this.paymentpage.error();
+         await this.paymentpage.goToMyTrips();
+         return errorMessage;
+    }
+
 
 }
