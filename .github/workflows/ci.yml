@@ -39,7 +39,7 @@ jobs:
          cat <<EOF > secrets.local.properties
          BASE_URL=${{ secrets.BASE_URL }}
          HEIDI_EMAIL=${{secrets.TRIPSTACK_HEIDI_EMAIL}}
-         HEIDI_PASSWORD: ${{ secrets.TRIPSTACK_HEIDI_PASSWORD }}
+         HEIDI_PASSWORD=${{ secrets.TRIPSTACK_HEIDI_PASSWORD }}
          EOF  
 
       - name: Run Integration Tests
