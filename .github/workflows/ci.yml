@@ -37,7 +37,7 @@ jobs:
         working-directory: ApiTesting
         run: |
          cat <<EOF > secrets.local.properties
-         BASE_URL=${{ secrets.BASE_URL }}
+         BASE_URL=${{ secrets.BASE_API_URL }}
          HEIDI_EMAIL=${{secrets.TRIPSTACK_HEIDI_EMAIL}}
          HEIDI_PASSWORD=${{ secrets.TRIPSTACK_HEIDI_PASSWORD }}
          EOF  
