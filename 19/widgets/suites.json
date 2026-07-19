@@ -1,0 +1,1 @@
+{"total":2,"items":[{"uid":"6fe38f72244b5dbefa02da593bd8f2b0","name":"com.api.support.BaseApiTest","statistic":{"failed":3,"broken":10,"skipped":0,"passed":0,"unknown":0,"total":13}},{"uid":"b1a2abd7f5a3fe6989d4db71d2f455de","name":"com.api.tests.BookingTestIT","statistic":{"failed":0,"broken":0,"skipped":0,"passed":5,"unknown":0,"total":5}}]}
