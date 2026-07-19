@@ -1,0 +1,106 @@
+name: Automation Tests
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  api-tests:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v5
+
+      - name: Set up Java
+        uses: actions/setup-java@v5
+        with:
+          distribution: temurin
+          java-version: '22'
+
+      - name: Set up Gradle
+        uses: gradle/actions/setup-gradle@v4
+
+      - name: Generate Gradle Wrapper
+        working-directory: ApiTesting
+        run: gradle wrapper
+
+      - name: Grant execute permission
+        working-directory: ApiTesting
+        run: chmod +x gradlew
+
+      - name: Create secrets.local.properties
+        working-directory: ApiTesting
+        run: |
+         cat <<EOF > secrets.local.properties
+         BASE_URL=${{ secrets.BASE_URL }}
+         HEIDI_EMAIL=${{secrets.TRIPSTACK_HEIDI_EMAIL}}
+         HEIDI_PASSWORD: ${{ secrets.TRIPSTACK_HEIDI_PASSWORD }}
+         EOF  
+
+      - name: Run Integration Tests
+        working-directory: ApiTesting
+        run: ./gradlew test
+
+      - name: Checkout gh-pages branch
+        if: always()
+        continue-on-error: true
+        uses: actions/checkout@v5
+        with:
+          ref: gh-pages
+          path: gh-pages
+
+      - name: Generate Allure Report
+        if: always()
+        uses: simple-elf/allure-report-action@master
+        with:
+          allure_results: ApiTesting/build/allure-results
+          allure_report: allure-report
+          gh_pages: gh-pages
+          allure_history: allure-history
+
+      - name: Upload Allure Report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: allure-report
+          path: allure-report
+
+      - name: Deploy Allure Report
+        if: always()
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          branch: gh-pages
+          folder: allure-history
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+  ui-tests:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Install Dependencies
+        working-directory: playwright
+        run: npm ci
+
+      - name: Install Browsers
+        working-directory: playwright
+        run: npx playwright install --with-deps
+
+      - name: Run Playwright Tests
+        working-directory: playwright
+        env:
+          BASE_URL: ${{ secrets.BASE_URL }}
+          TRIPSTACK_HEIDI_PASSWORD: ${{ secrets.TRIPSTACK_HEIDI_PASSWORD }}
+        run: npx playwright test ./tests/finalcapstone.spec.ts
